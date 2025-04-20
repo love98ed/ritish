@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SEO Web Design Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #3b82f6;
+      --primary-dark: #2563eb;
+      --dark: #0f172a;
+      --light: #f9fafb;
+      --gray: #6b7280;
+      --card-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    body {
+      background-color: var(--light);
+      color: #333;
+      line-height: 1.7;
+    }
+    
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Navigation */
+    nav {
+      background-color: rgba(15, 23, 42, 0.95);
+      position: fixed;
+      width: 100%;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      backdrop-filter: blur(5px);
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+    }
+    
+    .logo {
+      color: white;
+      font-weight: 700;
+      font-size: 1.4rem;
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+    
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+    
+    .nav-links a:hover {
+      color: white;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(to right, var(--dark), #1e3a8a);
+      color: white;
+      padding: 160px 20px 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://api.placeholder.com/1600/600') center/cover;
+      opacity: 0.05;
+      z-index: 1;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      opacity: 0.9;
+    }
+    
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    }
+    
+    .btn:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4);
+    }
+    
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      box-shadow: none;
+      margin-left: 15px;
+    }
+    
+    .btn-outline:hover {
+      background-color: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(59, 130, 246, 0.2);
+    }
+    
+    /* Sections */
+    section {
+      padding: 100px 20px;
+    }
+    
+    .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      color: var(--dark);
+      text-align: center;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    .section-title::after {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background-color: var(--primary);
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+    
+    /* Profile Section */
+    .profile {
+      background-color: white;
+    }
+    
+    .profile-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .profile-image {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--light);
+      box-shadow: var(--card-shadow);
+      margin-bottom: 25px;
+    }
+    
+    .profile-bio {
+      max-width: 800px;
+      margin-bottom: 30px;
+    }
+    
+    .profile-title {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: var(--dark);
+    }
+    
+    .profile-subtitle {
+      color: var(--primary);
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      background-color: var(--light);
+      border-radius: 50%;
+      color: var(--dark);
+      transition: var(--transition);
+    }
+    
+    .social-icon:hover {
+      background-color: var(--primary);
+      color: white;
+      transform: translateY(-3px);
+    }
+    
+    /* Why Work With Me */
+    .why-me {
+      background-color: var(--light);
+    }
+    
+    .why-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    /* Services */
+    .services-section {
+      background-color: white;
+    }
+    
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    
+    .service-card {
+      flex: 1 1 300px;
+      max-width: 350px;
+      background: white;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+      border-bottom: 4px solid transparent;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px);
+      border-bottom: 4px solid var(--primary);
+    }
+    
+    .service-icon {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    
+    .service-card h3 {
+      margin-bottom: 15px;
+      color: var(--dark);
+      font-size: 1.4rem;
+    }
+    
+    /* Process */
+    .process {
+      background-color: var(--light);
+    }
+    
+    .process-steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    
+    .process-step {
+      flex: 1 1 250px;
+      max-width: 250px;
+      text-align: center;
+    }
+    
+    .step-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background-color: var(--primary);
+      color: white;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0 auto 20px;
+    }
+    
+    .process-step h3 {
+      margin-bottom: 15px;
+      color: var(--dark);
+    }
+    
+    /* Contact Section */
+    .contact {
+      background: linear-gradient(to right, var(--dark), #1e3a8a);
+      color: white;
+      text-align: center;
+    }
+    
+    .contact .section-title {
+      color: white;
+    }
+    
+    .contact .section-title::after {
+      background-color: white;
+    }
+    
+    .contact-text {
+      max-width: 700px;
+      margin: 0 auto 40px;
+      opacity: 0.9;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .service-card {
+        flex: 1 1 100%;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-container">
+      <a href="#" class="logo">Ritish</a>
+      <div class="nav-links">
+        <a href="#profile">About Me</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container hero-content">
+      <h1>Beautiful Websites That Rank on Google</h1>
+      <p>Fast, mobile-friendly, SEO-optimized websites that drive results for your business.</p>
+      <div>
+        <a href="#contact" class="btn">Get a Free Quote</a>
+        <a href="#services" class="btn btn-outline">Learn More</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Profile Section -->
+  <section class="profile" id="profile">
+    <div class="container profile-container">
+      <img src="/img/ritish_pic.png" alt="Your Name" class="profile-image">
+      <h2 class="profile-title">Ritish</h2>
+      <p class="profile-subtitle">Web Designer & SEO Specialist</p>
+      <div class="profile-bio">
+        <p>Hello! I'm a passionate web designer with over 2 years of experience creating websites that not only look stunning but also perform exceptionally well in search engines. I specialize in helping small businesses and startups establish a strong online presence through strategic design and SEO implementation.</p>
+        <p>My approach combines clean, modern aesthetics with conversion-focused layouts and technical SEO best practices. I believe in transparent communication, attention to detail, and delivering projects that exceed expectations.</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/prabhakaran-ritish-45286921a/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Work With Me -->
+  <section class="why-me" id="why-me">
+    <div class="container">
+      <h2 class="section-title">Why Work With Me?</h2>
+      <div class="why-content">
+        <p>I'm a web designer with strong SEO knowledge, helping startups and small businesses create websites that don't just look good — they perform. I keep things simple, transparent, and tailored to your needs.</p>
+        <p>What sets me apart is my commitment to not just delivering a website, but a complete digital asset that works for your business around the clock. I focus on creating websites that convert visitors into customers while ranking well in search results.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <h2 class="section-title">What I Can Do for You</h2>
+      <div class="services">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3>Website Design</h3>
+          <p>Fast-loading, responsive, and modern websites tailored to your brand identity. Each design is created with user experience and conversions in mind.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <h3>SEO Setup</h3>
+          <p>Comprehensive keyword research, on-page SEO implementation, and site structure optimization to help your business rank higher in search results.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3>Maintenance & Updates</h3>
+          <p>Affordable support plans to keep your site updated, secure, and running smoothly. Regular performance monitoring and improvements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="process" id="process">
+    <div class="container">
+      <h2 class="section-title">My Process</h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <h3>Discovery</h3>
+          <p>We'll discuss your business goals, target audience, and project requirements to create a tailored strategy.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <h3>Design</h3>
+          <p>I'll create a visually appealing and user-friendly design that aligns with your brand identity.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <h3>Development</h3>
+          <p>Your design will be transformed into a fully functional, SEO-optimized website with all features implemented.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <h3>Launch</h3>
+          <p>After thorough testing, your website will go live with ongoing support to ensure everything runs smoothly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">Let's Build Something Together</h2>
+      <p class="contact-text">Ready to take your online presence to the next level? Send me a message and I'll get back to you within 24 hours with a free consultation.</p>
+      <a href="mailto:ritish1177@gmail.com" class="btn">Request a Free Quote</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2025 Ritish. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Simple scroll animation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
